@@ -7,7 +7,7 @@ Aplicación Web que muestra un listado de colores, que puede ser copiado al port
 -   node & npm
 -   [Angular CLI](https://github.com/angular/angular-cli)
 
-## instalar y correr el proyecto
+## Instalar y correr el proyecto
 
 ```bash
 $ git clone https://github.com/Dpezz/colores_web_mt.git
