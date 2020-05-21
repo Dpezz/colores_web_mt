@@ -1,0 +1,53 @@
+<div class="container mt-4">
+    <h1 class="display-4 text-center">Colores</h1>
+    <div class="dropdown-divider"></div>
+
+    <div class="row">
+        <div class="col-4 my-2" *ngFor="let color of colors?.data">
+            <div
+                class="card p-2"
+                (click)="copyItem(color)"
+                [ngStyle]="{ background: color?.color }"
+            >
+                <h6 class="text-left">{{ color?.year }}</h6>
+                <div class="card-content" *ngIf="!color.isCopy">
+                    <h6 class="text-center">
+                        {{ color?.name }}
+                    </h6>
+                    <h6 class="text-center font-weight-bold">
+                        {{ color?.color }}
+                    </h6>
+                </div>
+                <div class="card-content" *ngIf="color.isCopy">
+                    <h6 class="text-center">
+                        {{ "¡Copiado!" | uppercase }}
+                    </h6>
+                </div>
+                <h6 class="text-right">{{ color?.pantone_value }}</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col m-0">
+            <button
+                type="button"
+                class="btn btn-primary btn-lg btn-block"
+                [disabled]="page_current == 1"
+                (click)="prev()"
+            >
+                < Anterior
+            </button>
+        </div>
+        <div class="col m-0">
+            <button
+                type="button"
+                class="btn btn-primary btn-lg btn-block"
+                [disabled]="page_current == pages_total"
+                (click)="next()"
+            >
+                Siguiente >
+            </button>
+        </div>
+    </div>
+</div>
